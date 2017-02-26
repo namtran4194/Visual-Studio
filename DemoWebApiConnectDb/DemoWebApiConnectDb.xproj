@@ -6,7 +6,7 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>0a2fdc70-07d9-479f-a1f1-7582ee4d6ee0</ProjectGuid>
+    <ProjectGuid>f0019f76-7c7d-4215-b16c-9f9100ee5ad7</ProjectGuid>
     <RootNamespace>DemoWebApiConnectDb</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
