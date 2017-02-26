@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<TinTuc>
+  <BaiViet>
+    <TieuDe>Hoa ăn thịt người</TieuDe>
+    <TomTat>Có người gọi điện cầu cứu 911...</TomTat>
+    <HinhAnh>Images/flower.jpg</HinhAnh>
+  </BaiViet>
+  <BaiViet>
+    <TieuDe>Chim cánh cụt di cư</TieuDe>
+    <TomTat>Chim cánh cụt bắc cực di cư về phía nam để tránh rét...</TomTat>
+    <HinhAnh>Images/chimcanhcut.jpg</HinhAnh>
+  </BaiViet>
+  <BaiViet>
+    <TieuDe>Loài sứa lạ</TieuDe>
+    <TomTat>Phát hiện một con sứa lạ ở vịnh Hạ Long, có lẽ do du khách bỏ lại...</TomTat>
+    <HinhAnh>Images/sua.jpg</HinhAnh>
+  </BaiViet>
+  <BaiViet>
+    <TieuDe>Hoa tulip gây ung thư</TieuDe>
+    <TomTat>Trong 1 triệu người, có thể có 0,0025314 mắc ung thư mũi do phấn hoa tulip...</TomTat>
+    <HinhAnh>Images/tulip.jpg</HinhAnh>
+  </BaiViet>
+</TinTuc>
