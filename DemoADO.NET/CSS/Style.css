@@ -1,0 +1,73 @@
+﻿* {
+    font-family: Arial, sans-serif;
+    font-size: small;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background: #cf8787;
+}
+
+#mainWap {
+    width: 1000px;
+    min-height: 100%;
+    height: auto;
+    height: 100%;
+    margin: 0 auto;
+    background-color: whitesmoke;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid red;
+}
+
+#header {
+    margin-bottom: 5px;
+    height: 190px;
+    border: 1px solid #0026ff;
+}
+
+.logo {
+    float: left;
+    width: 298px;
+    border: 1px solid #00ff21;
+    height: 150px;
+}
+
+.banner {
+    float: left;
+    width: 696px;
+    border: 1px solid #ffd800;
+    height: 150px;
+}
+
+.menu {
+    margin-top: 5px;
+    height: 30px;
+    width: 100%;
+    border: 1px solid #ff006e;
+}
+
+.left {
+    float: left;
+    width: 198px;
+    height: 450px;
+    border: 1px solid #631414;
+}
+
+.right {
+    float: left;
+    width: 793px;
+    height: 450px;
+    margin-left: 5px;
+    border: 1px solid #ff6a00;
+}
+
+.clr {
+    clear: both;
+}
+
+.footer {
+    height: 100px;
+    margin-top: 5px;
+    border: 1px solid #4800ff;
+}
