@@ -66,8 +66,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="css\bootstrap.css" />
-    <Content Include="css\bootstrap.min.css" />
     <Content Include="css\default.css" />
     <Content Include="Default.aspx" />
     <Content Include="packages.config" />

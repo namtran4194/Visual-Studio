@@ -7,13 +7,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homepage - Sổ Địa Chỉ</title>
-
     <link href="~/css/default.css" rel="stylesheet" />
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div id="header">
-            <div class="banner"><strong>SỔ ĐỊA CHỈ</strong></div>
+    <form id="mainForm" runat="server">
+        <div class="header">
+            <a runat="server" href="~/"><strong>SỔ ĐỊA CHỈ</strong></a>
         </div>
 
         <div class="right">
