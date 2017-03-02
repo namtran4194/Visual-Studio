@@ -12,15 +12,21 @@
 <body>
     <form id="mainForm" runat="server">
         <div class="header">
-            <a runat="server" href="~/"><strong>SỔ ĐỊA CHỈ</strong></a>
+            <strong>SỔ ĐỊA CHỈ</strong>
         </div>
 
-        <div class="right">
+        <div class="menu">
+            <a runat="server" href="~/">Home</a>
+            <a runat="server" href="~/About.aspx">About</a>
+        </div>
+
+        <div class="content">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
 
         <div class="footer">
+            <hr />
             <p>&copy; <%: DateTime.Now.Year %> - All rights reserved</p>
         </div>
     </form>
