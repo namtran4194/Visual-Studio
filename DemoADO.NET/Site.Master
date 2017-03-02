@@ -13,8 +13,7 @@
 <body>
     <form id="form1" runat="server">
         <div id="header">
-            <div class="banner">Sổ Địa Chỉ</div>
-            <div class="menu">Menu</div>
+            <div class="banner"><strong>SỔ ĐỊA CHỈ</strong></div>
         </div>
 
         <div class="right">

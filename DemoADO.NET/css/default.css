@@ -3,12 +3,18 @@ body {
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
     padding: 0;
     margin: 0;
+    background-color: whitesmoke;
 }
 
 #header {
-    width: 300px;
-    color: red;
-    background-color: black;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    margin: 10px auto;
+    padding: 10px;
+    color: white;
+    font-size: xx-large;
+    background-color: darkblue;
 }
 
 input, select, textarea {
@@ -50,9 +56,11 @@ button, .button {
 button.red:hover {
     border-color: red;
 }
+
 button.orange:hover {
     border-color: orange;
 }
+
 button.black:hover {
     border-color: black;
 }
