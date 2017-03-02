@@ -4,38 +4,26 @@
 
 <html>
 <head runat="server">
-    <title>Homepage - Nam Tran</title>
-    <link href="~/CSS/Style.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage - Sổ Địa Chỉ</title>
+
+    <link href="~/css/default.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
-        <%-- Khung bao quanh toàn bộ website --%>
-        <div id="mainWap">
+        <div id="header">
+            <div class="banner">Sổ Địa Chỉ</div>
+            <div class="menu">Menu</div>
+        </div>
 
-            <%-- Đây là heaher của website --%>
-            <div id="header">
-                <div class="logo">Logo</div>
-                <div class="banner">Banner</div>
-                <div class="clr"></div>
-                <div class="menu">Menu</div>
-            </div>
+        <div class="right">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
 
-            <%-- Phần div bên trái chứa menu danh mục, online... hoặc có để bên phải tùy ý --%>
-            <div class="left">
-                Cột bên trái
-            </div>
-
-            <%-- Đây là phần nội dung --%>
-            <div class="right">
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                </asp:ContentPlaceHolder>
-            </div>
-
-            <div class="clr"></div>
-
-            <div class="footer">
-                Footer
-            </div>
+        <div class="footer">
+            <p>&copy; <%: DateTime.Now.Year %> - All rights reserved</p>
         </div>
     </form>
 </body>
