@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="DemoADO.NET.Default" %>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    Nội dung
+<%@ Register TagPrefix="vst" TagName="DanhSach" Src="~/DanhSachLienHe.ascx" %>
+
+<asp:Content ID="BodyContent" runat="server"
+    ContentPlaceHolderID="MainContent">
+    <vst:DanhSach ID="danhSach" runat="server" />
 </asp:Content>

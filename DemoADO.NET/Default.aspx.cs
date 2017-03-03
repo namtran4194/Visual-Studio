@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using DemoADO.NET.Models;
+using System;
+using System.Configuration;
 
 namespace DemoADO.NET
 {
@@ -11,7 +8,14 @@ namespace DemoADO.NET
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                BaseModel model = new SoDiaChiModel();
+                ConnectionStringSettings css = ConfigurationManager.ConnectionStrings["cnn"];
+                model.ConnectionString = css.ConnectionString;
+                model.Select();
+                danhSach.Model = model;
+            }
         }
     }
 }

@@ -67,8 +67,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="App_Data\SoDiaChi.mdf" />
+    <Content Include="App_Data\SoDiaChi_log.ldf">
+      <DependentUpon>SoDiaChi.mdf</DependentUpon>
+    </Content>
     <Content Include="css\default.css" />
+    <Content Include="DanhSachLienHe.ascx" />
     <Content Include="Default.aspx" />
+    <Content Include="FormEdit.ascx" />
     <Content Include="packages.config" />
     <Content Include="Site.Master" />
     <None Include="Web.Debug.config">
@@ -89,6 +95,13 @@
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DanhSachLienHe.ascx.cs">
+      <DependentUpon>DanhSachLienHe.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DanhSachLienHe.ascx.designer.cs">
+      <DependentUpon>DanhSachLienHe.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -96,6 +109,16 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FormEdit.ascx.cs">
+      <DependentUpon>FormEdit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormEdit.ascx.designer.cs">
+      <DependentUpon>FormEdit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\SoDiaChiModel.cs" />
+    <Compile Include="Models\SqlProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
