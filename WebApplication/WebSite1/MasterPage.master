@@ -1,0 +1,72 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+
+        .auto-style2 {
+            text-align: center;
+        }
+
+        .auto-style3 {
+            width: 173px;
+        }
+
+        .auto-style4 {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style2" colspan="2">
+                    <h1>Welcome to Summoner&#39;s rift</h1>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" id="tdChao" runat="server" class="auto-style4">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style3"><strong>
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Home.aspx">Trang chủ</asp:HyperLink>
+                </strong></td>
+                <td rowspan="4">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style3"><strong>
+                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Product.aspx">Sản phẩm</asp:HyperLink>
+                </strong></td>
+            </tr>
+            <tr>
+                <td class="auto-style3"><strong>
+                    <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/QuanLySanPham.aspx">Quản lý sản phẩm</asp:HyperLink>
+                </strong></td>
+            </tr>
+            <tr>
+                <td class="auto-style3"><strong>
+                    <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/QuanLyQuyen.aspx">Quản lý quyền</asp:HyperLink>
+                </strong></td>
+            </tr>
+            <tr>
+                <td class="auto-style3">Designed by namtran4194</td>
+                <td class="auto-style4">Số lượt ghé thăm:
+                    <asp:Label ID="Label1" runat="server" Text="0"></asp:Label>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
