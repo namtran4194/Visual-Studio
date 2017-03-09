@@ -1,9 +1,10 @@
-﻿using System;
-using BussinessLogicLayer;
+﻿using BussinessLogicLayer;
+using System;
 
 public partial class PermissionManager : System.Web.UI.Page
 {
     private PermissionBll _permBll = new PermissionBll();
+
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -34,7 +35,6 @@ public partial class PermissionManager : System.Web.UI.Page
 
     protected void Button2_Click(object sender, EventArgs e)
     {
-
         bool result = _permBll.RemovePermission(int.Parse(TextBox3.Text));
         if (result)
         {

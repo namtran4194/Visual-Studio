@@ -7,4 +7,3 @@
         <asp:Label ID="Label2" runat="server" ForeColor="Red" Text="Label"></asp:Label>
     </div>
 </asp:Content>
-

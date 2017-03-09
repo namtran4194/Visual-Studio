@@ -56,7 +56,6 @@
                 <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Thêm" />
                 <br />
                 <asp:Label ID="Label2" runat="server"></asp:Label>
-
             </td>
         </tr>
         <tr>
@@ -64,7 +63,6 @@
             <td class="auto-style11">
 
                 <asp:TextBox ID="TextBox3" runat="server" CssClass="auto-style12" Width="592px"></asp:TextBox>
-
             </td>
         </tr>
         <tr>
@@ -73,7 +71,6 @@
                 <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Xóa" />
                 <br />
                 <asp:Label ID="Label3" runat="server"></asp:Label>
-
             </td>
         </tr>
         <tr>
@@ -81,7 +78,6 @@
             <td class="auto-style14">
 
                 <asp:TextBox ID="TextBox4" runat="server" Width="594px"></asp:TextBox>
-
             </td>
         </tr>
         <tr>
@@ -89,7 +85,6 @@
             <td class="auto-style14">
 
                 <asp:TextBox ID="TextBox5" runat="server" Width="593px"></asp:TextBox>
-
             </td>
         </tr>
         <tr>
@@ -98,9 +93,7 @@
                 <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Sửa" />
                 <br />
                 <asp:Label ID="Label4" runat="server"></asp:Label>
-
             </td>
         </tr>
     </table>
 </asp:Content>
-

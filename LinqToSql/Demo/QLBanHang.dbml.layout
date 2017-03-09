@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="QLBanHang">
+  <DataContextMoniker Name="/QLBanHangDataContext" />
+  <nestedChildShapes>
+    <classShape Id="cc3b723f-1d6d-4e37-a5a0-4bafea5e0bfb" absoluteBounds="0.75, 1.25, 2, 1.1939925130208338">
+      <DataClassMoniker Name="/QLBanHangDataContext/Quyen" />
+      <nestedChildShapes>
+        <elementListCompartment Id="05689eb4-e9fe-4b8f-a423-f4839e64cc0d" absoluteBounds="0.765, 1.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e32d238d-3f0c-44ff-bca3-b13c48e45f44" absoluteBounds="3.5, 0.875, 2, 1.9631982421874998">
+      <DataClassMoniker Name="/QLBanHangDataContext/NguoiDung" />
+      <nestedChildShapes>
+        <elementListCompartment Id="551336ee-b59c-4146-8daf-ba1d21f31c18" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.84699625651042); (3.5 : 1.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLBanHangDataContext/Quyen/Quyen_NguoiDung" />
+      <nodes>
+        <classShapeMoniker Id="cc3b723f-1d6d-4e37-a5a0-4bafea5e0bfb" />
+        <classShapeMoniker Id="e32d238d-3f0c-44ff-bca3-b13c48e45f44" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

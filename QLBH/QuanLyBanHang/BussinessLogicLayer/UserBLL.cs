@@ -1,6 +1,6 @@
 ﻿using DataAccessLayer;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace BussinessLogicLayer
 {
@@ -71,6 +71,5 @@ namespace BussinessLogicLayer
             };
             return user;
         }
-
     }
 }

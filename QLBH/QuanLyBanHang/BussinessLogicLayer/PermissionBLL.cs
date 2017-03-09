@@ -37,14 +37,6 @@ namespace BussinessLogicLayer
             return _provider.UpdateData(sql, paramCode, paramName);
         }
 
-        // xóa quyền theo mã
-        public bool RemovePermission(int code)
-        {
-            var sql = "RemovePermission";
-            var param = new SqlParameter("code", code);
-            return _provider.UpdateData(sql, true, param);
-        }
-
         // sửa tên quyền
         public bool EditPermission(int code, string codeName)
         {
@@ -52,6 +44,14 @@ namespace BussinessLogicLayer
             var paramCode = new SqlParameter("code", code);
             var paramName = new SqlParameter("codeName", codeName);
             return _provider.UpdateData(sql, true, paramCode, paramName);
+        }
+
+        // xóa quyền theo mã
+        public bool RemovePermission(int code)
+        {
+            var sql = "RemovePermission";
+            var param = new SqlParameter("code", code);
+            return _provider.UpdateData(sql, true, param);
         }
     }
 }

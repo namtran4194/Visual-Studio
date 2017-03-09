@@ -1,9 +1,10 @@
-﻿using System;
-using BussinessLogicLayer;
+﻿using BussinessLogicLayer;
+using System;
 
 public partial class Register : System.Web.UI.Page
 {
     private UserBll _userBll = new UserBll();
+
     protected void Page_Load(object sender, EventArgs e)
     {
     }
@@ -19,7 +20,6 @@ public partial class Register : System.Web.UI.Page
         {
             Label2.Text = "Mật khẩu nhập lại không khớp!";
             return;
-
         }
         bool result = _userBll.AddNewUser(TextBox1.Text, TextBox2.Text, TextBox4.Text, TextBox5.Text);
         if (result)

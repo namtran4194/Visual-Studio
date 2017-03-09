@@ -1,8 +1,10 @@
-﻿using System;
-using BussinessLogicLayer;
+﻿using BussinessLogicLayer;
+using System;
+
 public partial class ChangePassword : System.Web.UI.Page
 {
     private UserBll _userBll = new UserBll();
+
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!(bool)Session["LoginStatus"])
