@@ -40,7 +40,7 @@
                 <td class="auto-style3"><strong>
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Home.aspx">Trang chủ</asp:HyperLink>
                 </strong></td>
-                <td rowspan="4">
+                <td rowspan="5">
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
                 </td>
@@ -59,6 +59,11 @@
                 <td class="auto-style3"><strong>
                     <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/PermissionManager.aspx">Quản lý quyền</asp:HyperLink>
                 </strong></td>
+            </tr>
+            <tr>
+                <td class="auto-style3"><strong>
+                    <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/UserManager.aspx">Quản lý người dùng</asp:HyperLink>
+                    </strong></td>
             </tr>
             <tr>
                 <td class="auto-style3">Designed by namtran4194</td>
