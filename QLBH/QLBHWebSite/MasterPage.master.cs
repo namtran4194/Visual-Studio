@@ -5,6 +5,9 @@ public partial class MasterPage : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        Label seporator = new Label();
+        seporator.Text = "\t";
+
         Label1.Text = Application["visit"].ToString();
         bool loginStatus = (bool)Session["LoginStatus"];
         if (loginStatus)
@@ -22,6 +25,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
             tdChao.Controls.Add(lblChao);
             tdChao.Controls.Add(hplChgPwd);
+            tdChao.Controls.Add(seporator);
             tdChao.Controls.Add(logout);
         }
         else
@@ -39,6 +43,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
             tdChao.Controls.Add(lblChao);
             tdChao.Controls.Add(hplLogin);
+            tdChao.Controls.Add(seporator);
             tdChao.Controls.Add(hplRegister);
         }
     }

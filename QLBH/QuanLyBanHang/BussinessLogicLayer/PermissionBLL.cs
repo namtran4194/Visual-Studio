@@ -28,6 +28,21 @@ namespace BussinessLogicLayer
             return permissions;
         }
 
+        public Permission GetPermission(int code)
+        {
+            var sql = "select * from Quyen where Ma=@code";
+            var param = new SqlParameter("code", code);
+            var table = _provider.GetData(sql, param);
+            if (table.Rows.Count <= 0) return null;
+            var row = table.Rows[0];
+            var p = new Permission
+            {
+                Ma = (int)row[0],
+                Ten = (string)row[1]
+            };
+            return p;
+        }
+
         // thêm quyền mới
         public bool AddPermission(int code, string name)
         {
