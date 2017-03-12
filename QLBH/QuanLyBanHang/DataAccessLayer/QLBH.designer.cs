@@ -33,6 +33,9 @@ namespace DataAccessLayer
     partial void InsertLoaiSanPham(LoaiSanPham instance);
     partial void UpdateLoaiSanPham(LoaiSanPham instance);
     partial void DeleteLoaiSanPham(LoaiSanPham instance);
+    partial void InsertUpload(Upload instance);
+    partial void UpdateUpload(Upload instance);
+    partial void DeleteUpload(Upload instance);
     partial void InsertNguoiDung(NguoiDung instance);
     partial void UpdateNguoiDung(NguoiDung instance);
     partial void DeleteNguoiDung(NguoiDung instance);
@@ -79,6 +82,14 @@ namespace DataAccessLayer
 			get
 			{
 				return this.GetTable<LoaiSanPham>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Upload> Uploads
+		{
+			get
+			{
+				return this.GetTable<Upload>();
 			}
 		}
 		
@@ -218,6 +229,120 @@ namespace DataAccessLayer
 		{
 			this.SendPropertyChanging();
 			entity.LoaiSanPham = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Upload")]
+	public partial class Upload : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _TenFileThat;
+		
+		private string _TenFile;
+		
+		private EntitySet<SanPham> _SanPhams;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTenFileThatChanging(string value);
+    partial void OnTenFileThatChanged();
+    partial void OnTenFileChanging(string value);
+    partial void OnTenFileChanged();
+    #endregion
+		
+		public Upload()
+		{
+			this._SanPhams = new EntitySet<SanPham>(new Action<SanPham>(this.attach_SanPhams), new Action<SanPham>(this.detach_SanPhams));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenFileThat", DbType="NVarChar(100) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string TenFileThat
+		{
+			get
+			{
+				return this._TenFileThat;
+			}
+			set
+			{
+				if ((this._TenFileThat != value))
+				{
+					this.OnTenFileThatChanging(value);
+					this.SendPropertyChanging();
+					this._TenFileThat = value;
+					this.SendPropertyChanged("TenFileThat");
+					this.OnTenFileThatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenFile", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string TenFile
+		{
+			get
+			{
+				return this._TenFile;
+			}
+			set
+			{
+				if ((this._TenFile != value))
+				{
+					this.OnTenFileChanging(value);
+					this.SendPropertyChanging();
+					this._TenFile = value;
+					this.SendPropertyChanged("TenFile");
+					this.OnTenFileChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Upload_SanPham", Storage="_SanPhams", ThisKey="TenFileThat", OtherKey="HinhAnh")]
+		public EntitySet<SanPham> SanPhams
+		{
+			get
+			{
+				return this._SanPhams;
+			}
+			set
+			{
+				this._SanPhams.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_SanPhams(SanPham entity)
+		{
+			this.SendPropertyChanging();
+			entity.Upload = this;
+		}
+		
+		private void detach_SanPhams(SanPham entity)
+		{
+			this.SendPropertyChanging();
+			entity.Upload = null;
 		}
 	}
 	
@@ -580,6 +705,8 @@ namespace DataAccessLayer
 		
 		private EntityRef<LoaiSanPham> _LoaiSanPham;
 		
+		private EntityRef<Upload> _Upload;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -603,6 +730,7 @@ namespace DataAccessLayer
 		public SanPham()
 		{
 			this._LoaiSanPham = default(EntityRef<LoaiSanPham>);
+			this._Upload = default(EntityRef<Upload>);
 			OnCreated();
 		}
 		
@@ -670,7 +798,7 @@ namespace DataAccessLayer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HinhAnh", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HinhAnh", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
 		public string HinhAnh
 		{
 			get
@@ -681,6 +809,10 @@ namespace DataAccessLayer
 			{
 				if ((this._HinhAnh != value))
 				{
+					if (this._Upload.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnHinhAnhChanging(value);
 					this.SendPropertyChanging();
 					this._HinhAnh = value;
@@ -780,6 +912,40 @@ namespace DataAccessLayer
 						this._MaLoai = default(int);
 					}
 					this.SendPropertyChanged("LoaiSanPham");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Upload_SanPham", Storage="_Upload", ThisKey="HinhAnh", OtherKey="TenFileThat", IsForeignKey=true)]
+		public Upload Upload
+		{
+			get
+			{
+				return this._Upload.Entity;
+			}
+			set
+			{
+				Upload previousValue = this._Upload.Entity;
+				if (((previousValue != value) 
+							|| (this._Upload.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Upload.Entity = null;
+						previousValue.SanPhams.Remove(this);
+					}
+					this._Upload.Entity = value;
+					if ((value != null))
+					{
+						value.SanPhams.Add(this);
+						this._HinhAnh = value.TenFileThat;
+					}
+					else
+					{
+						this._HinhAnh = default(string);
+					}
+					this.SendPropertyChanged("Upload");
 				}
 			}
 		}

@@ -58,7 +58,9 @@
                     <asp:TextBox ID="TenTextBox" runat="server" Text='<%# Bind("Ten") %>' />
                     <br />
                     HinhAnh:
-                    <asp:TextBox ID="HinhAnhTextBox" runat="server" Text='<%# Bind("HinhAnh") %>' />
+                    <asp:DropDownList ID="DropDownList4" runat="server" DataSourceID="SqlDataSource2" DataTextField="TenFile" DataValueField="TenFileThat" SelectedValue='<%# Bind("HinhAnh") %>'>
+                    </asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:QLBH %>" SelectCommand="SELECT * FROM [Upload] ORDER BY [TenFile]"></asp:SqlDataSource>
                     <br />
                     MieuTa:
                     <asp:TextBox ID="MieuTaTextBox" runat="server" Text='<%# Bind("MieuTa") %>' />
@@ -98,7 +100,7 @@
                 </ItemTemplate>
             </asp:FormView>
             </div>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QLBH %>" DeleteCommand="DELETE FROM [SanPham] WHERE [Ma] = @Ma" InsertCommand="INSERT INTO [SanPham] ([MaLoai], [Ten], [HinhAnh], [MieuTa], [Gia], [NgaySX]) VALUES (@MaLoai, @Ten, @HinhAnh, @MieuTa, @Gia, @NgaySX)" SelectCommand="SELECT * FROM [SanPham] WHERE ([Ma] = @Ma)" UpdateCommand="UPDATE [SanPham] SET [MaLoai] = @MaLoai, [Ten] = @Ten, [HinhAnh] = @HinhAnh, [MieuTa] = @MieuTa, [Gia] = @Gia, [NgaySX] = @NgaySX WHERE [Ma] = @Ma">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QLBH %>" DeleteCommand="DELETE FROM [SanPham] WHERE [Ma] = @Ma" InsertCommand="INSERT INTO [SanPham] ([MaLoai], [Ten], [HinhAnh], [MieuTa], [Gia], [NgaySX]) VALUES (@MaLoai, @Ten, @HinhAnh, @MieuTa, @Gia, @NgaySX)" SelectCommand="SELECT * FROM [SanPham]" UpdateCommand="UPDATE [SanPham] SET [MaLoai] = @MaLoai, [Ten] = @Ten, [HinhAnh] = @HinhAnh, [MieuTa] = @MieuTa, [Gia] = @Gia, [NgaySX] = @NgaySX WHERE [Ma] = @Ma">
                 <DeleteParameters>
                     <asp:Parameter Name="Ma" Type="Int32" />
                 </DeleteParameters>
@@ -110,9 +112,6 @@
                     <asp:Parameter Name="Gia" Type="Int32" />
                     <asp:Parameter Name="NgaySX" Type="DateTime" />
                 </InsertParameters>
-                <SelectParameters>
-                    <asp:ControlParameter ControlID="DropDownList2" Name="Ma" PropertyName="SelectedValue" Type="Int32" />
-                </SelectParameters>
                 <UpdateParameters>
                     <asp:Parameter Name="MaLoai" Type="Int32" />
                     <asp:Parameter Name="Ten" Type="String" />

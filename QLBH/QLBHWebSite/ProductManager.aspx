@@ -17,7 +17,7 @@
 
         <asp:DataList ID="DataList1" runat="server" CellSpacing="5" DataKeyField="Ma" RepeatColumns="3" RepeatDirection="Horizontal">
             <ItemTemplate>
-                <asp:Image ID="Image1" runat="server" Height="200px" ImageUrl='<%# Eval("HinhAnh", "~/Images/{0}") %>' Width="200px" />
+                <asp:Image ID="Image1" runat="server" Height="200px" ImageUrl='<%# Eval("HinhAnh", "~/ProductImages/{0}") %>' Width="200px" />
                 <br />
                 <asp:HyperLink ID="HyperLink6" runat="server" Font-Bold="True" NavigateUrl='<%# Eval("Ma", "~/ProductDetail.aspx?MaSP={0}") %>' Text='<%# Eval("Ten") %>'></asp:HyperLink>
                 <br />
@@ -26,6 +26,13 @@
 <br />
             </ItemTemplate>
         </asp:DataList>
+
+        <br />
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style2" id="tdPage" runat="server">&nbsp;</td>
+            </tr>
+        </table>
 
     </div>
 </asp:Content>

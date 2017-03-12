@@ -7,6 +7,13 @@
       <Association Name="LoaiSanPham_SanPham" Member="SanPhams" ThisKey="Ma" OtherKey="MaLoai" Type="SanPham" />
     </Type>
   </Table>
+  <Table Name="dbo.Upload" Member="Uploads">
+    <Type Name="Upload">
+      <Column Name="TenFileThat" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenFile" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Upload_SanPham" Member="SanPhams" ThisKey="TenFileThat" OtherKey="HinhAnh" Type="SanPham" />
+    </Type>
+  </Table>
   <Table Name="dbo.NguoiDung" Member="NguoiDungs">
     <Type Name="NguoiDung">
       <Column Name="Ma" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -30,11 +37,12 @@
       <Column Name="Ma" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="MaLoai" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Ten" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="HinhAnh" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="HinhAnh" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="MieuTa" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
       <Column Name="Gia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="NgaySX" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Association Name="LoaiSanPham_SanPham" Member="LoaiSanPham" ThisKey="MaLoai" OtherKey="Ma" Type="LoaiSanPham" IsForeignKey="true" />
+      <Association Name="Upload_SanPham" Member="Upload" ThisKey="HinhAnh" OtherKey="TenFileThat" Type="Upload" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
