@@ -1,8 +1,10 @@
 ﻿using BussinessLogicLayer;
 using System;
+using DataAccessLayer;
 
 public partial class ProductManager : System.Web.UI.Page
 {
+    private ProductBll _prodBll = new ProductBll();
     protected void Page_Load(object sender, EventArgs e)
     {
         UserBll userBll = new UserBll();
@@ -18,5 +20,8 @@ public partial class ProductManager : System.Web.UI.Page
             Session["NotifCode"] = 2;
             Response.Redirect("Notification.aspx");
         }
+
+        DataList1.DataSource = _prodBll.ProductList();
+        DataList1.DataBind();
     }
 }
